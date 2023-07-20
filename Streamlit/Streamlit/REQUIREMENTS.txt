@@ -1,0 +1,12 @@
+REQUIREMENTS- 
+LIBRARIES NEEDED - 
+ streamlit 
+ sounddevice 
+ numpy 
+ librosa
+ tensorflow 
+ speech_recognition 
+ wave
+ transformers
+ TFRobertaForSequenceClassification
+ RobertaTokenizerFast
