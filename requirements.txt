@@ -4,9 +4,9 @@ sounddevice==0.4.6
 SpeechRecognition==3.8.1
 streamlit==1.22.0
 streamlit-autorefresh==0.0.1
-tensorflow==2.11.0
-tokenizers==0.13.3
-transformers==4.29.2
+tensorflow
+tokenizers
+transformers
 librosa
 wave
 
