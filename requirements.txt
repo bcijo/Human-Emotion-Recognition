@@ -1,9 +1,9 @@
-numpy==1.23.1
-PyWavelets==1.4.1
-sounddevice==0.4.6
-SpeechRecognition==3.8.1
-streamlit==1.22.0
-streamlit-autorefresh==0.0.1
+numpy
+PyWavelets
+sounddevice
+portaudio
+SpeechRecognition
+streamlit
 tensorflow
 tokenizers
 transformers
