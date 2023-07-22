@@ -1,13 +1,13 @@
-numpy
-PyWavelets
-sounddevice
-portaudio
-SpeechRecognition
+numpy==1.23.1
+PyWavelets==1.4.1
+SpeechRecognition==3.8.1
 streamlit
 tensorflow
 tokenizers
 transformers
 librosa
 wave
+sounddevice==0.4.6
+soundfile==0.12.1
 
 
