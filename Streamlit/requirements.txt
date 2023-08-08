@@ -6,5 +6,6 @@ transformers
 librosa
 wave
 pickle
+keras.saving.pickle_utils
 
 
