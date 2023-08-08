@@ -5,6 +5,6 @@ tensorflow
 transformers
 librosa
 wave
-
+pickle
 
 
