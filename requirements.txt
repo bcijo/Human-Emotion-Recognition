@@ -9,5 +9,6 @@ librosa
 wave
 sounddevice==0.4.6
 soundfile==0.12.1
+pyaudio
 
 
