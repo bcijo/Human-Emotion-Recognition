@@ -10,7 +10,7 @@ from transformers import TFRobertaForSequenceClassification
 from transformers import RobertaTokenizerFast
 import csv
 
-audio_model = tf.keras.models.load_model(r"C:\Users\sakshi\Downloads\saved_audio_model-20230523T172522Z-001\saved_audio_model")
+audio_model = tf.keras.models.load_model(r"\saved_audio_model-20230523T172522Z-001\saved_audio_model")
 dir_path=r"C:\Users\sakshi\Downloads\roberta-20230521T191714Z-001\roberta"
 tokenizer_fine_tuned = RobertaTokenizerFast.from_pretrained('bcijo/Emotion-RoBERTa')
 model_fine_tuned = TFRobertaForSequenceClassification.from_pretrained('bcijo/Emotion-RoBERTa')
