@@ -11,7 +11,7 @@ from transformers import RobertaTokenizerFast
 import csv
 import pickle
 
-audio_model = pickle.load(open(r"trained_model (1).sav", "rb"))
+audio_model = pickle.load(open(r"Streamlit/trained_model (1).sav", "rb"))
 # dir_path=r"C:\Users\sakshi\Downloads\roberta-20230521T191714Z-001\roberta"
 tokenizer_fine_tuned = RobertaTokenizerFast.from_pretrained('bcijo/Emotion-RoBERTa')
 model_fine_tuned = TFRobertaForSequenceClassification.from_pretrained('bcijo/Emotion-RoBERTa')
