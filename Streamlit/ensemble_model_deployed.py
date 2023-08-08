@@ -1,5 +1,5 @@
 import streamlit as st
-import sounddevice as sd
+# import sounddevice as sd
 import numpy as np
 import librosa
 import tensorflow as tf
@@ -14,14 +14,6 @@ audio_model = tf.keras.models.load_model(r"C:\Users\sakshi\Downloads\saved_audio
 dir_path=r"C:\Users\sakshi\Downloads\roberta-20230521T191714Z-001\roberta"
 tokenizer_fine_tuned = RobertaTokenizerFast.from_pretrained('bcijo/Emotion-RoBERTa')
 model_fine_tuned = TFRobertaForSequenceClassification.from_pretrained('bcijo/Emotion-RoBERTa')
-
-
-def record(duration):
-    fs = 22050
-    recording = sd.rec(int(duration * fs), samplerate=fs, channels=1)
-    sd.wait()
-    return recording.flatten()
-
 
 def preprocess(audio_path):
     y, sr = librosa.load(audio_path, duration=3 , offset= 0.5)
@@ -84,7 +76,7 @@ def ensemble(text_preds, audio_preds):
     st.write(f'Final prediction: {emotion_set[final_pred[0]]}')
     print('Final accuracy for prediction : ', final_preds[0][final_pred[0]])
     st.write(f'Final accuracy for prediction: {final_preds[0][final_pred[0]]}')
-#
+
 # Define the Streamlit app
 def app():
     st.sidebar.title("Navigation")
@@ -134,19 +126,14 @@ def app():
 
             ensemble(final_text,final_audio)
 
+def callback(indata, outdata, frames, time, status):
+    # This is a simple audio callback that does nothing.
+    pass
 
-    # elif app_mode == "Contribute to Dataset":
-    #     st.title("Contribute to Dataset")
-    #     # st.write("This is where users can contribute to the emotion recognition dataset.")
-    #
-    #     data = st.text_input("Data")
-    #     label = st.text_input("Label")
-    #
-    #     if st.button("Save"):
-    #         save_to_csv(data, label)
-    #         st.write("Data saved successfully!")
 
-# # Run the Streamlit app
 if __name__ == "__main__":
     app()
 
+with sd.Stream(callback=callback):
+    print("Sounddevice is working correctly.")
+    input("Press Enter to exit.")
