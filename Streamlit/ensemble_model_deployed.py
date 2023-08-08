@@ -9,9 +9,10 @@ import transformers
 from transformers import TFRobertaForSequenceClassification
 from transformers import RobertaTokenizerFast
 import csv
+import pickle
 
-audio_model = tf.keras.models.load_model("saved_audio_model-20230523T172522Z-001/saved_audio_model")
-#dir_path=r"C:\Users\sakshi\Downloads\roberta-20230521T191714Z-001\roberta"
+audio_model = pickle.load(open(r"C:\Users\sakshi\Downloads\trained_model (1).sav", "rb"))
+# dir_path=r"C:\Users\sakshi\Downloads\roberta-20230521T191714Z-001\roberta"
 tokenizer_fine_tuned = RobertaTokenizerFast.from_pretrained('bcijo/Emotion-RoBERTa')
 model_fine_tuned = TFRobertaForSequenceClassification.from_pretrained('bcijo/Emotion-RoBERTa')
 
@@ -76,7 +77,7 @@ def ensemble(text_preds, audio_preds):
     st.write(f'Final prediction: {emotion_set[final_pred[0]]}')
     print('Final accuracy for prediction : ', final_preds[0][final_pred[0]])
     st.write(f'Final accuracy for prediction: {final_preds[0][final_pred[0]]}')
-
+#
 # Define the Streamlit app
 def app():
     st.sidebar.title("Navigation")
@@ -126,6 +127,19 @@ def app():
 
             ensemble(final_text,final_audio)
 
+
+    # elif app_mode == "Contribute to Dataset":
+    #     st.title("Contribute to Dataset")
+    #     # st.write("This is where users can contribute to the emotion recognition dataset.")
+    #
+    #     data = st.text_input("Data")
+    #     label = st.text_input("Label")
+    #
+    #     if st.button("Save"):
+    #         save_to_csv(data, label)
+    #         st.write("Data saved successfully!")
+
+# # Run the Streamlit app
 def callback(indata, outdata, frames, time, status):
     # This is a simple audio callback that does nothing.
     pass
