@@ -10,8 +10,13 @@ from transformers import TFRobertaForSequenceClassification
 from transformers import RobertaTokenizerFast
 import csv
 import pickle
+from tensorflow.keras.models import model_from_json
 
-audio_model = pickle.load(open(r"Streamlit/trained_model (1).sav", "rb"))
+
+with open('Streamlit/model.json', 'r') as json_file:
+    loaded_model_json = json_file.read()
+
+audio_model = model_from_json(loaded_model_json)
 # dir_path=r"C:\Users\sakshi\Downloads\roberta-20230521T191714Z-001\roberta"
 tokenizer_fine_tuned = RobertaTokenizerFast.from_pretrained('bcijo/Emotion-RoBERTa')
 model_fine_tuned = TFRobertaForSequenceClassification.from_pretrained('bcijo/Emotion-RoBERTa')
