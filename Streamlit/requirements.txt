@@ -5,6 +5,7 @@ tensorflow
 transformers
 librosa
 wave
+pyaudio
 
 
 
