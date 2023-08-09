@@ -153,6 +153,3 @@ def callback(indata, outdata, frames, time, status):
 if __name__ == "__main__":
     app()
 
-with sd.Stream(callback=callback):
-    print("Sounddevice is working correctly.")
-    input("Press Enter to exit.")
