@@ -94,7 +94,7 @@ def app():
     if app_mode == "Home":
         st.title("Welcome to Emotion Recognition App")
         # st.write("This is the home page of the app.")
-        st.image("dsbck.jpg", width=900)
+        # st.image("dsbck.jpg", width=900)
     elif app_mode == "Prediction":
         st.title("Real-time Emotion Recognition")
 
