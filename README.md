@@ -13,11 +13,11 @@
 
 ## Datasets used for the project 
 
-#### Audio Dataset : RAVEDESS (Ryerson Audio-Visual Database of Emotional Speech and Song)
+### Audio Dataset : [RAVEDESS (Ryerson Audio-Visual Database of Emotional Speech and Song)](https://www.kaggle.com/datasets/uwrfkaggler/ravdess-emotional-speech-audio)
 RAVEDESS was the audio dataset we worked on . It consists of 8 emotion classes namely Sad, Anger, Happy, Surprised , Disgust, Neutral and Calm with the total size of 1440. But the dataset was modified to match the dataset of the lexical model which had only 6 classes. So after removal of disgust class and merging calm with Neutral the final size of the dataset was 1056.
 
 
-### Text Dataset : dair-ai/emotion from HuggingFace
+### Text Dataset : [dair-ai/emotion from HuggingFace](https://huggingface.co/datasets/dair-ai/emotion)
 The text dataset is taken from dair-ai/emotion from hugging face. It is a very clean dataset consisting of 6 basic emotions - sad, happy, anger, love, surprise and fear. But in order to have the same classes as the Audio dataset, ‘love’ class was removed. The dataset consists of 417,000 datapoints belonging to different classes which is mostly balanced.
 
 ## Modelling and Results
