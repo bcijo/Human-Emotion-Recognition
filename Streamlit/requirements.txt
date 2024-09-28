@@ -1,0 +1,13 @@
+numpy
+pyaudio
+SpeechRecognition
+streamlit
+tensorflow
+transformers
+librosa
+wave
+
+
+
+
+
